@@ -1,6 +1,9 @@
 # I'm just the one that executes the instructions!
 from PIL import Image as pillow
-import sys, math, json, operator, keys, time
+import sys, math, json, operator, time, sys
+import mcpi.minecraft as minecraft
+import mcpi.block as block
+import functions as pymc
 from tqdm import tqdm
 
 # Functions
@@ -25,31 +28,28 @@ def comp_pixel(rgb, blist):
             smallest_name = i["Name"]
     return([smallest_num, smallest_rgb, smallest_name])
 
-def get_most_used(list):
-    use_list = {}
-    most_used = {}
-    for key in list:
-        if key in use_list:
-            use_list[key] += 1
-        else:
-            use_list[key] = 1
-    for i in range(9):
-            cused = max(use_list.items(), key=operator.itemgetter(1))[0]
-            most_used[cused] = use_list[cused]
-            del(use_list[cused])
-    return(most_used)
-
 # Main code
-json_file = open("blocks.json")
-json_put = json.load(json_file)
-rim = pillow.open(sys.argv[1])
+mc = minecraft.Minecraft.create()
+try:
+    json_file = open("blocks.json")
+    json_put = json.load(json_file)
+except:
+    pymc.chat(mc, "blocks.json not found, exiting!", 0)
+    sys.exit(1)
+try:
+    rim = pillow.open(sys.argv[1])
+except:
+    pymc.chat(mc, "bad image, exiting!", 0)
+    sys.exit(1)
 orders = []
 used = []
 
 imwid, imhei = rim.size
-maxheight = 200
-rim.thumbnail((200, maxheight), pillow.ANTIALIAS)
-imwid, imhei = rim.size
+if imhei > 200:
+    maxheight = 200
+    rim.thumbnail((200, maxheight), pillow.ANTIALIAS)
+    imwid, imhei = rim.size
+    pymc.chat(mc, "image is over 200 pixels, reducing height.", 2)
 
 rim.convert('RGB')
 im = rim.load()
@@ -62,33 +62,8 @@ for hei in range(imhei):
         used.append(smal[2])
         pbar.update(1)
 pbar.close()
-most_used = get_most_used(used)
-
-mu_blocks = []
-
-for i in json_put:
-    try:
-        if i["Name"] in most_used:
-            mu_blocks.append({"Color":i["Color"], "Name":i["Name"]})
-    except ValueError:
-        pass
-
-pbar = tqdm(total=imhei*imwid)
-for hei in range(imhei):
-    for wid in range(imwid):
-        smal = comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]), mu_blocks)
-        im[wid, hei] = smal[1]
-        used.append(smal[2])
-        pbar.update(1)
-pbar.close()
 
 rim.save("result.JPG")
 json_file.close()
 
-print("Get these items:\n")
-for i in range(9):
-    print("slot " + str(i+1) + " - " + mu_blocks[i]["Name"][:-4])
-print("\n press enter to continue")
-input()
-for i in tqdm(range(10)):
-    time.sleep(1)
+pymc.chat(mc, "Ready!")
