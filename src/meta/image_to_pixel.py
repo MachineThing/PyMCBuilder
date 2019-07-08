@@ -4,7 +4,8 @@ import sys
 
 def calc_avg_pixel(image):
     im = pillow.open(image)
-    pix = im.load()
+    rgb = im.convert('RGB')
+    pix = rgb.load()
     imwid, imhei = im.size
     imwid = imwid - 1
     imhei = imhei - 1
