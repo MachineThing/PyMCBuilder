@@ -1,6 +1,6 @@
 # I'm just the one that executes the instructions!
 from PIL import Image as pillow
-import sys, math, json
+import sys, math, json, operator
 
 # Functions
 
@@ -24,6 +24,20 @@ def comp_pixel(rgb):
             smallest_name = i["Name"]
     return([smallest_num, smallest_rgb, smallest_name])
 
+def get_most_used(list):
+    use_list = {}
+    most_used = {}
+    for key in list:
+        if key in use_list:
+            use_list[key] += 1
+        else:
+            use_list[key] = 1
+    for i in range(9):
+            cused = max(use_list.items(), key=operator.itemgetter(1))[0]
+            most_used[cused] = use_list[cused]
+            del(use_list[cused])
+    return(most_used)
+
 # Main code
 json_file = open("blocks.json")
 json_put = json.load(json_file)
@@ -44,6 +58,8 @@ for hei in range(imhei):
         smal = comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]))
         im[wid, hei] = smal[1]
         used.append(smal[2])
+
+print(get_most_used(used))
 
 rim.save("result.JPG")
 json_file.close()
