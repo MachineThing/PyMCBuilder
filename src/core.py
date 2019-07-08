@@ -1,6 +1,6 @@
 # I'm just the one that executes the instructions!
 from PIL import Image as pillow
-import sys, math, json, operator
+import sys, math, json, operator, keys, time
 from tqdm import tqdm
 
 # Functions
@@ -69,11 +69,10 @@ mu_blocks = []
 for i in json_put:
     try:
         if i["Name"] in most_used:
-            print(i)
             mu_blocks.append({"Color":i["Color"], "Name":i["Name"]})
     except ValueError:
         pass
-print(mu_blocks)
+
 pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
     for wid in range(imwid):
@@ -85,3 +84,11 @@ pbar.close()
 
 rim.save("result.JPG")
 json_file.close()
+
+print("Get these items:\n")
+for i in range(9):
+    print("slot " + str(i+1) + " - " + mu_blocks[i]["Name"][:-4])
+print("\n press enter to continue")
+input()
+for i in tqdm(range(10)):
+    time.sleep(1)
