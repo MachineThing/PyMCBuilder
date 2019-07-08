@@ -1,1 +1,0 @@
-# I "blockify" the image!
