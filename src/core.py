@@ -1,7 +1,8 @@
 # I'm just the one that executes the instructions!
-from PIL import Image as pillow
 import sys, math, json, operator, time, sys
 import mcpi.minecraft as minecraft
+from PIL import Image as pillow
+from blockid import get_block
 import mcpi.block as block
 import functions as pymc
 from tqdm import tqdm
@@ -56,20 +57,25 @@ im = rim.load()
 
 pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
+    wid_list = []
     for wid in range(imwid):
         smal = comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]), json_put)
         im[wid, hei] = smal[1]
-        used.append(smal[2])
+        wid_list.append(smal[2])
         pbar.update(1)
+    used.append(wid_list)
 pbar.close()
 
 rim.save("result.JPG")
 json_file.close()
 
-pymc.chat(mc, "Please look at terminal for more instructions!")
-print("\nNow, we need your coords.")
-x_coord = input("Your X coordinate: ")
-y_coord = input("Your Y coordinate: ")
-z_coord = input("Your Z coordinate: ")
+oldPos = mc.player.getPos()
+playerPos = [round(oldPos.x), round(oldPos.y), round(oldPos.z)]
 pymc.chat(mc, "Ready!")
-mc.setBlock(~0,~0,~0,block.WOOD)
+pbar = tqdm(total=imhei*imwid)
+for hei in range(imhei):
+    list = used[hei]
+    for wid in range(imwid):
+        pass
+        mc.setBlock(playerPos[0]+imwid, playerPos[1]+imhei, playerPos[2], get_block(list[wid]))
+pbar.close()

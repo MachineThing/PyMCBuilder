@@ -17,7 +17,7 @@ def get_block(bn):
     blockcheck(bn, "planks_birch.png", block.WOOD_PLANKS_BIRCH)
     blockcheck(bn, "log_spruce.png", block.SPRUCE_WOOD)
     blockcheck(bn, "planks_spruce.png", block.WOOD_PLANKS_SPRUCE)
-    blockcheck(bn, "log_jungle.png", block.ACACIA_JUNGLE)
+    blockcheck(bn, "log_jungle.png", block.JUNGLE_WOOD)
     blockcheck(bn, "planks_jungle.png", block.WOOD_PLANKS_JUNGLE)
     # wool
     blockcheck(bn, "wool_colored_black.png", block.WOOL_BLACK)
@@ -33,7 +33,7 @@ def get_block(bn):
     blockcheck(bn, "wool_colored_pink.png", block.WOOL_PINK)
     blockcheck(bn, "wool_colored_purple.png", block.WOOL_PURPLE)
     blockcheck(bn, "wool_colored_red.png", block.WOOL_RED)
-    blockcheck(bn, "wool_colored_silver.png", block.WOOL_SILVER)
+    blockcheck(bn, "wool_colored_silver.png", block.WOOL_LIGHT_GRAY)
     blockcheck(bn, "wool_colored_white.png", block.WOOL_WHITE)
     blockcheck(bn, "wool_colored_yellow.png", block.WOOL_YELLOW)
     # concrete
@@ -50,7 +50,7 @@ def get_block(bn):
     blockcheck(bn, "concrete_pink.png", block.CONCRETE_BLOCK_PINK)
     blockcheck(bn, "concrete_purple.png", block.CONCRETE_BLOCK_PURPLE)
     blockcheck(bn, "concrete_red.png", block.CONCRETE_BLOCK_RED)
-    blockcheck(bn, "concrete_silver.png", block.CONCRETE_BLOCK_SILVER)
+    blockcheck(bn, "concrete_silver.png", block.CONCRETE_BLOCK_LIGHT_GRAY)
     blockcheck(bn, "concrete_white.png", block.CONCRETE_BLOCK_WHITE)
     blockcheck(bn, "concrete_yellow.png", block.CONCRETE_BLOCK_YELLOW)
     # other blocks
@@ -59,6 +59,6 @@ def get_block(bn):
     blockcheck(bn, "emerand_block.png", block.EMERALD_BLOCK)
     blockcheck(bn, "gold_block.png", block.GOLD_BLOCK)
     blockcheck(bn, "iron_block.png", block.IRON_BLOCK)
-    blockcheck(bn, "lapis_block.png", block.LAPIS_BLOCK)
+    blockcheck(bn, "lapis_block.png", block.LAPIS_LAZULI_BLOCK)
     blockcheck(bn, "purpur_block.png", block.REDSTONE_BLOCK)
     blockcheck(bn, "redstone_block.png", block.PURPUR_BLOCK)
