@@ -1,39 +1,12 @@
 [
   {
     "Color": [
-      103,
-      97,
-      87
+      145,
+      96,
+      82
     ],
-    "Flammable?": true,
-    "Name": "acacia_log.png"
-  },
-  {
-    "Color": [
-      171,
-      92,
-      51
-    ],
-    "Flammable?": true,
-    "Name": "acacia_planks.png"
-  },
-  {
-    "Color": [
-      218,
-      216,
-      212
-    ],
-    "Flammable?": true,
-    "Name": "birch_log.png"
-  },
-  {
-    "Color": [
-      195,
-      178,
-      123
-    ],
-    "Flammable?": true,
-    "Name": "birch_planks.png"
+    "Flammable?": false,
+    "Name": "brick.png"
   },
   {
     "Color": [
@@ -42,25 +15,7 @@
       15
     ],
     "Flammable?": false,
-    "Name": "black_concrete.png"
-  },
-  {
-    "Color": [
-      37,
-      23,
-      16
-    ],
-    "Flammable?": false,
-    "Name": "black_terracotta.png"
-  },
-  {
-    "Color": [
-      21,
-      21,
-      26
-    ],
-    "Flammable?": true,
-    "Name": "black_wool.png"
+    "Name": "concrete_black.png"
   },
   {
     "Color": [
@@ -69,34 +24,7 @@
       143
     ],
     "Flammable?": false,
-    "Name": "blue_concrete.png"
-  },
-  {
-    "Color": [
-      74,
-      60,
-      91
-    ],
-    "Flammable?": false,
-    "Name": "blue_terracotta.png"
-  },
-  {
-    "Color": [
-      53,
-      57,
-      158
-    ],
-    "Flammable?": true,
-    "Name": "blue_wool.png"
-  },
-  {
-    "Color": [
-      151,
-      95,
-      80
-    ],
-    "Flammable?": false,
-    "Name": "bricks.png"
+    "Name": "concrete_blue.png"
   },
   {
     "Color": [
@@ -105,34 +33,7 @@
       32
     ],
     "Flammable?": false,
-    "Name": "brown_concrete.png"
-  },
-  {
-    "Color": [
-      77,
-      51,
-      36
-    ],
-    "Flammable?": false,
-    "Name": "brown_terracotta.png"
-  },
-  {
-    "Color": [
-      114,
-      72,
-      41
-    ],
-    "Flammable?": true,
-    "Name": "brown_wool.png"
-  },
-  {
-    "Color": [
-      16,
-      16,
-      16
-    ],
-    "Flammable?": false,
-    "Name": "coal_block.png"
+    "Name": "concrete_brown.png"
   },
   {
     "Color": [
@@ -141,79 +42,7 @@
       136
     ],
     "Flammable?": false,
-    "Name": "cyan_concrete.png"
-  },
-  {
-    "Color": [
-      87,
-      91,
-      91
-    ],
-    "Flammable?": false,
-    "Name": "cyan_terracotta.png"
-  },
-  {
-    "Color": [
-      21,
-      138,
-      145
-    ],
-    "Flammable?": true,
-    "Name": "cyan_wool.png"
-  },
-  {
-    "Color": [
-      60,
-      47,
-      26
-    ],
-    "Flammable?": true,
-    "Name": "dark_oak_log.png"
-  },
-  {
-    "Color": [
-      68,
-      44,
-      21
-    ],
-    "Flammable?": true,
-    "Name": "dark_oak_planks.png"
-  },
-  {
-    "Color": [
-      109,
-      244,
-      233
-    ],
-    "Flammable?": false,
-    "Name": "diamond_block.png"
-  },
-  {
-    "Color": [
-      44,
-      210,
-      94
-    ],
-    "Flammable?": false,
-    "Name": "emerald_block.png"
-  },
-  {
-    "Color": [
-      222,
-      229,
-      165
-    ],
-    "Flammable?": false,
-    "Name": "end_stone_bricks.png"
-  },
-  {
-    "Color": [
-      252,
-      217,
-      64
-    ],
-    "Flammable?": false,
-    "Name": "gold_block.png"
+    "Name": "concrete_cyan.png"
   },
   {
     "Color": [
@@ -222,25 +51,7 @@
       62
     ],
     "Flammable?": false,
-    "Name": "gray_concrete.png"
-  },
-  {
-    "Color": [
-      58,
-      42,
-      36
-    ],
-    "Flammable?": false,
-    "Name": "gray_terracotta.png"
-  },
-  {
-    "Color": [
-      63,
-      68,
-      72
-    ],
-    "Flammable?": true,
-    "Name": "gray_wool.png"
+    "Name": "concrete_gray.png"
   },
   {
     "Color": [
@@ -249,52 +60,7 @@
       36
     ],
     "Flammable?": false,
-    "Name": "green_concrete.png"
-  },
-  {
-    "Color": [
-      76,
-      83,
-      42
-    ],
-    "Flammable?": false,
-    "Name": "green_terracotta.png"
-  },
-  {
-    "Color": [
-      85,
-      110,
-      27
-    ],
-    "Flammable?": true,
-    "Name": "green_wool.png"
-  },
-  {
-    "Color": [
-      85,
-      68,
-      25
-    ],
-    "Flammable?": true,
-    "Name": "jungle_log.png"
-  },
-  {
-    "Color": [
-      164,
-      118,
-      83
-    ],
-    "Flammable?": true,
-    "Name": "jungle_planks.png"
-  },
-  {
-    "Color": [
-      31,
-      69,
-      142
-    ],
-    "Flammable?": false,
-    "Name": "lapis_block.png"
+    "Name": "concrete_green.png"
   },
   {
     "Color": [
@@ -303,52 +69,7 @@
       199
     ],
     "Flammable?": false,
-    "Name": "light_blue_concrete.png"
-  },
-  {
-    "Color": [
-      113,
-      109,
-      138
-    ],
-    "Flammable?": false,
-    "Name": "light_blue_terracotta.png"
-  },
-  {
-    "Color": [
-      58,
-      175,
-      217
-    ],
-    "Flammable?": true,
-    "Name": "light_blue_wool.png"
-  },
-  {
-    "Color": [
-      125,
-      125,
-      115
-    ],
-    "Flammable?": false,
-    "Name": "light_gray_concrete.png"
-  },
-  {
-    "Color": [
-      135,
-      107,
-      97
-    ],
-    "Flammable?": false,
-    "Name": "light_gray_terracotta.png"
-  },
-  {
-    "Color": [
-      142,
-      142,
-      135
-    ],
-    "Flammable?": true,
-    "Name": "light_gray_wool.png"
+    "Name": "concrete_light_blue.png"
   },
   {
     "Color": [
@@ -357,25 +78,7 @@
       25
     ],
     "Flammable?": false,
-    "Name": "lime_concrete.png"
-  },
-  {
-    "Color": [
-      104,
-      118,
-      53
-    ],
-    "Flammable?": false,
-    "Name": "lime_terracotta.png"
-  },
-  {
-    "Color": [
-      112,
-      185,
-      26
-    ],
-    "Flammable?": true,
-    "Name": "lime_wool.png"
+    "Name": "concrete_lime.png"
   },
   {
     "Color": [
@@ -384,61 +87,7 @@
       159
     ],
     "Flammable?": false,
-    "Name": "magenta_concrete.png"
-  },
-  {
-    "Color": [
-      150,
-      88,
-      109
-    ],
-    "Flammable?": false,
-    "Name": "magenta_terracotta.png"
-  },
-  {
-    "Color": [
-      190,
-      69,
-      180
-    ],
-    "Flammable?": true,
-    "Name": "magenta_wool.png"
-  },
-  {
-    "Color": [
-      44,
-      22,
-      26
-    ],
-    "Flammable?": false,
-    "Name": "nether_bricks.png"
-  },
-  {
-    "Color": [
-      109,
-      85,
-      51
-    ],
-    "Flammable?": true,
-    "Name": "oak_log.png"
-  },
-  {
-    "Color": [
-      166,
-      134,
-      81
-    ],
-    "Flammable?": true,
-    "Name": "oak_planks.png"
-  },
-  {
-    "Color": [
-      16,
-      11,
-      26
-    ],
-    "Flammable?": false,
-    "Name": "obsidian.png"
+    "Name": "concrete_magenta.png"
   },
   {
     "Color": [
@@ -447,25 +96,7 @@
       1
     ],
     "Flammable?": false,
-    "Name": "orange_concrete.png"
-  },
-  {
-    "Color": [
-      162,
-      84,
-      38
-    ],
-    "Flammable?": false,
-    "Name": "orange_terracotta.png"
-  },
-  {
-    "Color": [
-      241,
-      118,
-      20
-    ],
-    "Flammable?": true,
-    "Name": "orange_wool.png"
+    "Name": "concrete_orange.png"
   },
   {
     "Color": [
@@ -474,34 +105,7 @@
       143
     ],
     "Flammable?": false,
-    "Name": "pink_concrete.png"
-  },
-  {
-    "Color": [
-      162,
-      78,
-      79
-    ],
-    "Flammable?": false,
-    "Name": "pink_terracotta.png"
-  },
-  {
-    "Color": [
-      238,
-      142,
-      172
-    ],
-    "Flammable?": true,
-    "Name": "pink_wool.png"
-  },
-  {
-    "Color": [
-      104,
-      177,
-      165
-    ],
-    "Flammable?": false,
-    "Name": "prismarine_bricks.png"
+    "Name": "concrete_pink.png"
   },
   {
     "Color": [
@@ -510,25 +114,7 @@
       156
     ],
     "Flammable?": false,
-    "Name": "purple_concrete.png"
-  },
-  {
-    "Color": [
-      118,
-      70,
-      86
-    ],
-    "Flammable?": false,
-    "Name": "purple_terracotta.png"
-  },
-  {
-    "Color": [
-      122,
-      42,
-      173
-    ],
-    "Flammable?": true,
-    "Name": "purple_wool.png"
+    "Name": "concrete_purple.png"
   },
   {
     "Color": [
@@ -537,79 +123,16 @@
       33
     ],
     "Flammable?": false,
-    "Name": "red_concrete.png"
-  },
-  {
-    "Color": [
-      70,
-      7,
-      9
-    ],
-    "Flammable?": false,
-    "Name": "red_nether_bricks.png"
-  },
-  {
-    "Color": [
-      143,
-      61,
-      47
-    ],
-    "Flammable?": false,
-    "Name": "red_terracotta.png"
-  },
-  {
-    "Color": [
-      161,
-      39,
-      35
-    ],
-    "Flammable?": true,
-    "Name": "red_wool.png"
-  },
-  {
-    "Color": [
-      168,
-      24,
-      5
-    ],
-    "Flammable?": false,
-    "Name": "redstone_block.png"
-  },
-  {
-    "Color": [
-      59,
-      38,
-      17
-    ],
-    "Flammable?": true,
-    "Name": "spruce_log.png"
-  },
-  {
-    "Color": [
-      117,
-      87,
-      50
-    ],
-    "Flammable?": true,
-    "Name": "spruce_planks.png"
+    "Name": "concrete_red.png"
   },
   {
     "Color": [
       125,
       125,
-      125
+      115
     ],
     "Flammable?": false,
-    "Name": "stone_bricks.png"
-  },
-  {
-    "Color": [
-      152,
-      94,
-      68
-    ],
-    "Flammable?": false,
-    "Name": "terracotta.png"
+    "Name": "concrete_silver.png"
   },
   {
     "Color": [
@@ -618,25 +141,7 @@
       214
     ],
     "Flammable?": false,
-    "Name": "white_concrete.png"
-  },
-  {
-    "Color": [
-      210,
-      178,
-      161
-    ],
-    "Flammable?": false,
-    "Name": "white_terracotta.png"
-  },
-  {
-    "Color": [
-      234,
-      236,
-      237
-    ],
-    "Flammable?": true,
-    "Name": "white_wool.png"
+    "Name": "concrete_white.png"
   },
   {
     "Color": [
@@ -645,16 +150,313 @@
       21
     ],
     "Flammable?": false,
-    "Name": "yellow_concrete.png"
+    "Name": "concrete_yellow.png"
   },
   {
     "Color": [
-      186,
-      133,
-      35
+      111,
+      223,
+      218
     ],
     "Flammable?": false,
-    "Name": "yellow_terracotta.png"
+    "Name": "diamond_block.png"
+  },
+  {
+    "Color": [
+      85,
+      221,
+      121
+    ],
+    "Flammable?": false,
+    "Name": "emerald_block.png"
+  },
+  {
+    "Color": [
+      251,
+      241,
+      82
+    ],
+    "Flammable?": false,
+    "Name": "gold_block.png"
+  },
+  {
+    "Color": [
+      224,
+      224,
+      224
+    ],
+    "Flammable?": false,
+    "Name": "iron_block.png"
+  },
+  {
+    "Color": [
+      40,
+      69,
+      140
+    ],
+    "Flammable?": false,
+    "Name": "lapis_block.png"
+  },
+  {
+    "Color": [
+      105,
+      98,
+      88
+    ],
+    "Flammable?": true,
+    "Name": "log_acacia.png"
+  },
+  {
+    "Color": [
+      52,
+      40,
+      23
+    ],
+    "Flammable?": true,
+    "Name": "log_big_oak.png"
+  },
+  {
+    "Color": [
+      208,
+      208,
+      202
+    ],
+    "Flammable?": true,
+    "Name": "log_birch.png"
+  },
+  {
+    "Color": [
+      87,
+      68,
+      27
+    ],
+    "Flammable?": true,
+    "Name": "log_jungle.png"
+  },
+  {
+    "Color": [
+      101,
+      80,
+      49
+    ],
+    "Flammable?": true,
+    "Name": "log_oak.png"
+  },
+  {
+    "Color": [
+      45,
+      28,
+      12
+    ],
+    "Flammable?": true,
+    "Name": "log_spruce.png"
+  },
+  {
+    "Color": [
+      172,
+      93,
+      52
+    ],
+    "Flammable?": true,
+    "Name": "planks_acacia.png"
+  },
+  {
+    "Color": [
+      62,
+      40,
+      19
+    ],
+    "Flammable?": true,
+    "Name": "planks_big_oak.png"
+  },
+  {
+    "Color": [
+      199,
+      182,
+      125
+    ],
+    "Flammable?": true,
+    "Name": "planks_birch.png"
+  },
+  {
+    "Color": [
+      158,
+      113,
+      79
+    ],
+    "Flammable?": true,
+    "Name": "planks_jungle.png"
+  },
+  {
+    "Color": [
+      160,
+      130,
+      80
+    ],
+    "Flammable?": true,
+    "Name": "planks_oak.png"
+  },
+  {
+    "Color": [
+      106,
+      80,
+      48
+    ],
+    "Flammable?": true,
+    "Name": "planks_spruce.png"
+  },
+  {
+    "Color": [
+      169,
+      125,
+      169
+    ],
+    "Flammable?": false,
+    "Name": "purpur_block.png"
+  },
+  {
+    "Color": [
+      164,
+      27,
+      9
+    ],
+    "Flammable?": false,
+    "Name": "redstone_block.png"
+  },
+  {
+    "Color": [
+      21,
+      21,
+      26
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_black.png"
+  },
+  {
+    "Color": [
+      53,
+      57,
+      158
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_blue.png"
+  },
+  {
+    "Color": [
+      114,
+      72,
+      41
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_brown.png"
+  },
+  {
+    "Color": [
+      21,
+      138,
+      145
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_cyan.png"
+  },
+  {
+    "Color": [
+      63,
+      68,
+      72
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_gray.png"
+  },
+  {
+    "Color": [
+      85,
+      110,
+      27
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_green.png"
+  },
+  {
+    "Color": [
+      58,
+      175,
+      217
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_light_blue.png"
+  },
+  {
+    "Color": [
+      112,
+      185,
+      26
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_lime.png"
+  },
+  {
+    "Color": [
+      190,
+      69,
+      180
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_magenta.png"
+  },
+  {
+    "Color": [
+      241,
+      118,
+      20
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_orange.png"
+  },
+  {
+    "Color": [
+      238,
+      142,
+      172
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_pink.png"
+  },
+  {
+    "Color": [
+      122,
+      42,
+      173
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_purple.png"
+  },
+  {
+    "Color": [
+      161,
+      39,
+      35
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_red.png"
+  },
+  {
+    "Color": [
+      142,
+      142,
+      135
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_silver.png"
+  },
+  {
+    "Color": [
+      234,
+      236,
+      237
+    ],
+    "Flammable?": true,
+    "Name": "wool_colored_white.png"
   },
   {
     "Color": [
@@ -663,6 +465,6 @@
       40
     ],
     "Flammable?": true,
-    "Name": "yellow_wool.png"
+    "Name": "wool_colored_yellow.png"
   }
 ]
