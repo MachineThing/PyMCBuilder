@@ -6,6 +6,7 @@ from blockid import get_block
 import mcpi.block as block
 import functions as pymc
 from tqdm import tqdm
+import tkinter as tk
 
 # Functions
 
@@ -64,12 +65,9 @@ for hei in range(imhei):
         pbar.update(1)
 pbar.close()
 
-#for i in used:
-#    print(i)
-#sys.exit(0)
-
 rim.save("result.GIF") # The result
 json_file.close()
+
 oldPos = mc.player.getPos()
 playerPos = [round(oldPos.x), round(oldPos.y), round(oldPos.z)]
 pymc.chat(mc, "Ready!")
@@ -85,4 +83,3 @@ for hei in range(imhei):
 pbar.close()
 pymc.chat(mc, "Done!!")
 pymc.chat(mc, "Please star us on github if you like the result!", 2)
-pymc.chat(mc, "https://github.com/ShepardPower/PyMCBuilder", 2)
