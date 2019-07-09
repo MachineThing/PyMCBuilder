@@ -1,5 +1,5 @@
 # I'm just the one that executes the instructions!
-import sys, math, json, operator, time, sys
+import sys, math, json, operator, time
 import mcpi.minecraft as minecraft
 from PIL import Image as pillow
 from blockid import get_block
@@ -50,33 +50,42 @@ if imhei > 200:
     maxheight = 200
     rim.thumbnail((200, maxheight), pillow.ANTIALIAS)
     imwid, imhei = rim.size
-    pymc.chat(mc, "image is over 200 pixels, reducing height.", 2)
+    pymc.chat(mc, "image is over 200 pixels, reducing height.", 1)
 
 rim.convert('RGB')
 im = rim.load()
+
 pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
-    wid_list = []
     for wid in range(imwid):
         smal = comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]), json_put)
         im[wid, hei] = smal[1]
-        wid_list.append(smal[2])
+        used.append(str(smal[2]))
         pbar.update(1)
-    used.append(wid_list)
 pbar.close()
+
+#for i in used:
+#    print(i)
+#sys.exit(0)
 
 rim.save("result.JPG")
 json_file.close()
-#print(used)
-
 oldPos = mc.player.getPos()
 playerPos = [round(oldPos.x), round(oldPos.y), round(oldPos.z)]
 pymc.chat(mc, "Ready!")
 pbar = tqdm(total=imhei*imwid)
+num_temp = imhei*imwid-1
 for hei in range(imhei):
-    list = used[hei]
     for wid in range(imwid):
-        blockget = get_block(list[wid])
-        print(blockget)
-        mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], blockget)
+        #print(used[wid + (imhei * hei)])
+        gblock = get_block(used[num_temp])
+        if gblock == None:
+            mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], gblock)
+        else:
+            mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], gblock)
+        num_temp -= 1
+        pbar.update(1)
 pbar.close()
+pymc.chat(mc, "Done!!")
+pymc.chat(mc, "Please star us on github if you like the result!", 2)
+pymc.chat(mc, "https://github.com/ShepardPower/PyMCBuilder", 2)
