@@ -68,7 +68,7 @@ pbar.close()
 #    print(i)
 #sys.exit(0)
 
-rim.save("result.JPG")
+rim.save("result.GIF") # The result
 json_file.close()
 oldPos = mc.player.getPos()
 playerPos = [round(oldPos.x), round(oldPos.y), round(oldPos.z)]
@@ -79,10 +79,7 @@ for hei in range(imhei):
     for wid in range(imwid):
         #print(used[wid + (imhei * hei)])
         gblock = get_block(used[num_temp])
-        if gblock == None:
-            mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], gblock)
-        else:
-            mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], gblock)
+        mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], gblock)
         num_temp -= 1
         pbar.update(1)
 pbar.close()

@@ -5,9 +5,7 @@ glock = ""
 
 def blockcheck(blockname, blockwanted, blockget):
     global glock
-    #print(blockname + " - " + blockwanted)
     if str(blockname) == str(blockwanted):
-        #print(True)
         glock = blockget
 
 def get_block(bn):
@@ -68,6 +66,17 @@ def get_block(bn):
     blockcheck(bn, "lapis_block.png", block.LAPIS_LAZULI_BLOCK)
     blockcheck(bn, "purpur_block.png", block.PURPUR_BLOCK)
     blockcheck(bn, "redstone_block.png", block.REDSTONE_BLOCK)
+
+    blockcheck(bn, "bedrock.png", block.BEDROCK)
+    blockcheck(bn, "end_bricks.png", block.END_BRICKS)
+    blockcheck(bn, "obsidian.png", block.OBSIDIAN)
+    blockcheck(bn, "prismarine_bricks.png", block.PRISMARINE_BRICKS)
+    blockcheck(bn, "red_nether_brick.png", block.RED_NETHER_BRICK)
+    blockcheck(bn, "stonebrick_carved.png", block.STONE_BRICK_CHISELED)
+    blockcheck(bn, "stonebrick_cracked.png", block.STONE_BRICK_CRACKED)
+    blockcheck(bn, "stonebrick_mossy.png", block.STONE_BRICK_MOSSY)
+    blockcheck(bn, "stonebrick.png", block.STONE_BRICK)
+    blockcheck(bn, "nether_brick.png", block.NETHER_BRICK)
+    blockcheck(bn, "bookshelf.png", block.BOOKSHELF)
     # give info
-    #print(glock)
     return(glock)

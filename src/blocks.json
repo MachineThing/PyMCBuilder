@@ -1,6 +1,24 @@
 [
   {
     "Color": [
+      85,
+      85,
+      85
+    ],
+    "Flammable?": false,
+    "Name": "bedrock.png"
+  },
+  {
+    "Color": [
+      104,
+      85,
+      56
+    ],
+    "Flammable?": true,
+    "Name": "bookshelf.png"
+  },
+  {
+    "Color": [
       145,
       96,
       82
@@ -172,6 +190,15 @@
   },
   {
     "Color": [
+      228,
+      234,
+      173
+    ],
+    "Flammable?": false,
+    "Name": "end_bricks.png"
+  },
+  {
+    "Color": [
       251,
       241,
       82
@@ -253,6 +280,24 @@
   },
   {
     "Color": [
+      45,
+      23,
+      27
+    ],
+    "Flammable?": false,
+    "Name": "nether_brick.png"
+  },
+  {
+    "Color": [
+      21,
+      19,
+      31
+    ],
+    "Flammable?": false,
+    "Name": "obsidian.png"
+  },
+  {
+    "Color": [
       172,
       93,
       52
@@ -307,6 +352,15 @@
   },
   {
     "Color": [
+      104,
+      165,
+      148
+    ],
+    "Flammable?": false,
+    "Name": "prismarine_bricks.png"
+  },
+  {
+    "Color": [
       169,
       125,
       169
@@ -316,12 +370,57 @@
   },
   {
     "Color": [
+      69,
+      5,
+      7
+    ],
+    "Flammable?": false,
+    "Name": "red_nether_brick.png"
+  },
+  {
+    "Color": [
       164,
       27,
       9
     ],
     "Flammable?": false,
     "Name": "redstone_block.png"
+  },
+  {
+    "Color": [
+      125,
+      125,
+      125
+    ],
+    "Flammable?": false,
+    "Name": "stonebrick.png"
+  },
+  {
+    "Color": [
+      122,
+      122,
+      122
+    ],
+    "Flammable?": false,
+    "Name": "stonebrick_carved.png"
+  },
+  {
+    "Color": [
+      121,
+      121,
+      121
+    ],
+    "Flammable?": false,
+    "Name": "stonebrick_cracked.png"
+  },
+  {
+    "Color": [
+      117,
+      121,
+      108
+    ],
+    "Flammable?": false,
+    "Name": "stonebrick_mossy.png"
   },
   {
     "Color": [
