@@ -54,7 +54,6 @@ if imhei > 200:
 
 rim.convert('RGB')
 im = rim.load()
-
 pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
     wid_list = []
@@ -68,6 +67,7 @@ pbar.close()
 
 rim.save("result.JPG")
 json_file.close()
+#print(used)
 
 oldPos = mc.player.getPos()
 playerPos = [round(oldPos.x), round(oldPos.y), round(oldPos.z)]
@@ -76,6 +76,7 @@ pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
     list = used[hei]
     for wid in range(imwid):
-        pass
-        mc.setBlock(playerPos[0]+imwid, playerPos[1]+imhei, playerPos[2], get_block(list[wid]))
+        blockget = get_block(list[wid])
+        print(blockget)
+        mc.setBlock(playerPos[0]+wid, playerPos[1]+hei, playerPos[2], blockget)
 pbar.close()
