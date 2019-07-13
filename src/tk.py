@@ -11,6 +11,9 @@ class Application(tk.Frame):
         self.image = ""
         master.title("PyMcBuilder")
         master.geometry("500x400")
+
+        self.img_loaded = False
+
         self.pack()
         self.create_widgets()
 
@@ -22,8 +25,10 @@ class Application(tk.Frame):
         self.img_label = tk.Label(self, height=200)
         self.display_image()
 
+        self.alerts_label = tk.Label(self, text="No image!", fg="red")
         self.progress = tk2.Progressbar(self, orient='horizontal',length=500,mode='determinate')
 
+        self.alerts_label.pack(side="top")
         self.progress.pack(side="bottom")
         self.img_label.pack(expand="no")
 
@@ -35,9 +40,12 @@ class Application(tk.Frame):
         menu.add_cascade(label="File", menu=file)
 
     def get_file(self):
-        file_get = filedialog.askopenfilename(title = "Select image",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
-        self.image = file_get
-        self.display_image()
+        try:
+            file_get = filedialog.askopenfilename(title = "Select image",filetypes = (("All supported files","*.jpg *.jfif *.gif"),("all files","*.*"),("jpeg files","*.jpg"),("jfif files","*.jfif"),("gif files","*.gif")))
+            self.image = file_get
+            self.display_image()
+        except:
+            print("Bad image!")
 
     def display_image(self):
         load = Image.open(self.image)
@@ -47,6 +55,11 @@ class Application(tk.Frame):
         # Load image
         self.img_label['image']=render
         self.img_label.image = render
+        # Change label
+        if self.img_loaded == False:
+            self.img_loaded = True
+        else:
+            self.alerts_label['text'] = 'Minecraft is not linked!'
 
 root = tk.Tk()
 app = Application(master=root)
