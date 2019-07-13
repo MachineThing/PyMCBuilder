@@ -1,6 +1,8 @@
 from tkinter import filedialog
 from PIL import Image, ImageTk
+import tkinter.ttk as tk2
 import tkinter as tk
+import os
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -16,7 +18,14 @@ class Application(tk.Frame):
         menu = tk.Menu(self.master)
         self.master.config(menu=menu)
 
+        self.image = os.path.join(os.getcwd(), 'images\\pImage.JPG')
         self.img_label = tk.Label(self, height=200)
+        self.display_image()
+
+        self.progress = tk2.Progressbar(self, orient='horizontal',length=500,mode='determinate')
+
+        self.progress.pack(side="bottom")
+        self.img_label.pack(expand="no")
 
         file = tk.Menu(menu)
         file.add_command(label="Open image", command=self.get_file)
@@ -24,8 +33,6 @@ class Application(tk.Frame):
         #file.add_command(label="Save schematic", command=quit)
         file.add_command(label="Exit", command=quit)
         menu.add_cascade(label="File", menu=file)
-
-        self.img_label.pack(expand="no")
 
     def get_file(self):
         file_get = filedialog.askopenfilename(title = "Select image",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
