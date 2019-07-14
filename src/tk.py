@@ -50,7 +50,11 @@ class Application(tk.Frame):
 
     def get_file(self):
         types = (
+<<<<<<< HEAD
         #('gif','gif'),
+=======
+        ('gif','gif'),
+>>>>>>> 2aee4048b170d79c081a86712328fe3f947b8ae8
         ('jfif','jfif'),
         ('jpeg','jpg'),
         )
@@ -73,7 +77,11 @@ class Application(tk.Frame):
                 self.image = file_get
                 self.display_image()
                 self.get_result['state']="active"
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 2aee4048b170d79c081a86712328fe3f947b8ae8
         except:
             print("Bad image!")
 
