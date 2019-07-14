@@ -1,12 +1,15 @@
 # I'm the graphical version of clcore!
 from tkinter import filedialog, messagebox
 import mcpi.minecraft as minecraft
-import os, tempfile, json, time
 from PIL import Image, ImageTk
+from random import randint
 import mcpi.block as block
 import tkinter.ttk as tk2
 import functions as pymc
+import os, json, time
 import tkinter as tk
+
+img_filename = os.path.join(os.getcwd(), '.'+str(randint(10000000, 99999999))+'PMB.GIF')
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -102,14 +105,14 @@ class Application(tk.Frame):
             print("Bad image!")
 
     def display_image(self):
-        load = Image.open(self.image)
-        load.convert('RGB')
-        load.thumbnail((200, 200), Image.ANTIALIAS)
-        self.imwid, self.imhei = load.size
-        render = ImageTk.PhotoImage(load)
-        self.im = load.load()
+        self.mim = Image.open(self.image)
+        self.mim.convert('RGB')
+        self.mim.thumbnail((200, 200), Image.ANTIALIAS)
+        self.imwid, self.imhei = self.mim.size
+        render = ImageTk.PhotoImage(self.mim)
+        self.im = self.mim.load()
         # Load image
-        self.img_label['image']=render
+        self.img_label['image'] = render
         self.img_label.image = render
         # Change label
         if self.img_loaded == False:
@@ -146,6 +149,14 @@ class Application(tk.Frame):
                 self.bused.append(str(smal[2]))
                 self.progress["value"] += 1
                 self.read_bytes()
+        self.mim.save(img_filename)
+        nimage = Image.open(img_filename)
+        nimage.convert('RGB')
+        nimage.thumbnail((200, 200), Image.ANTIALIAS)
+        render = ImageTk.PhotoImage(nimage)
+        self.img_label['image'] = render
+        self.img_label.image = render
+        self.result_made = True
 
     def link_minecraft(self):
         try:
@@ -160,3 +171,7 @@ class Application(tk.Frame):
 root = tk.Tk()
 app = Application(master=root)
 app.mainloop()
+try:
+    os.remove(img_filename)
+except:
+    pass
