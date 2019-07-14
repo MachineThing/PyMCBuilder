@@ -2,7 +2,7 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import tkinter.ttk as tk2
 import tkinter as tk
-import os
+import os, tempfile
 
 class Application(tk.Frame):
     def __init__(self, master=None):
@@ -11,6 +11,7 @@ class Application(tk.Frame):
         self.image = ""
         master.title("PyMcBuilder")
         master.geometry("500x400")
+        master.iconbitmap(os.path.join(os.getcwd(), 'images\\Logo.ico'))
 
         self.img_loaded = False
 
@@ -27,10 +28,18 @@ class Application(tk.Frame):
 
         self.alerts_label = tk.Label(self, text="No image!", fg="red")
         self.progress = tk2.Progressbar(self, orient='horizontal',length=500,mode='determinate')
+        self.b_frame = tk.Frame(self)
+        self.get_result = tk.Button(self.b_frame, text="Make result", state="disabled")
+        self.link_mc = tk.Button(self.b_frame, text="Link Minecraft", state="disabled")
+        self.print_img = tk.Button(self.b_frame, text="Print!", state="disabled")
 
         self.alerts_label.pack(side="top")
         self.progress.pack(side="bottom")
         self.img_label.pack(expand="no")
+        self.get_result.grid(row=0, column=0)
+        self.link_mc.grid(row=0, column=1)
+        self.print_img.grid(row=0, column=2)
+        self.b_frame.pack(side="bottom")
 
         file = tk.Menu(menu)
         file.add_command(label="Open image", command=self.get_file)
