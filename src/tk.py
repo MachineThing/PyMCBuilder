@@ -10,7 +10,7 @@ class Application(tk.Frame):
         self.master = master
         self.image = ""
         master.title("PyMcBuilder")
-        master.geometry("500x400")
+        master.geometry("325x293")
         master.iconbitmap(os.path.join(os.getcwd(), 'images\\Logo.ico'))
 
         self.img_loaded = False
@@ -30,8 +30,8 @@ class Application(tk.Frame):
         self.progress = tk2.Progressbar(self, orient='horizontal',length=500,mode='determinate')
         self.b_frame = tk.Frame(self)
         self.get_result = tk.Button(self.b_frame, text="Make result", state="disabled")
-        self.link_mc = tk.Button(self.b_frame, text="Link Minecraft", state="disabled")
-        self.print_img = tk.Button(self.b_frame, text="Print!", state="disabled")
+        self.link_mc = tk.Button(self.b_frame, text="Link Minecraft", state="active")
+        self.print_img = tk.Button(self.b_frame, text="Build image!", state="disabled")
 
         self.alerts_label.pack(side="top")
         self.progress.pack(side="bottom")
@@ -49,10 +49,31 @@ class Application(tk.Frame):
         menu.add_cascade(label="File", menu=file)
 
     def get_file(self):
+        types = (
+        ('gif','gif'),
+        ('jfif','jfif'),
+        ('jpeg','jpg'),
+        )
+        alltypes = ""
+        alltype = []
+        for type in types:
+            alltype.append(type[1])
+        alltypes = " *.".join(alltype)
+        lstypes = [("All supported files",alltypes),("all files","*.*")]
+
+        for ntype in types:
+            file = ntype[0]+' files', '*.'+ntype[1]
+            lstypes.append(file)
+
+        stypes = tuple(lstypes)
+
         try:
-            file_get = filedialog.askopenfilename(title = "Select image",filetypes = (("All supported files","*.jpg *.jfif *.gif"),("all files","*.*"),("jpeg files","*.jpg"),("jfif files","*.jfif"),("gif files","*.gif")))
-            self.image = file_get
-            self.display_image()
+            file_get = filedialog.askopenfilename(title = "Select image",filetypes = stypes)
+            if file_get != '':
+                self.image = file_get
+                self.display_image()
+                self.get_result['state']="active"
+            
         except:
             print("Bad image!")
 
@@ -68,7 +89,7 @@ class Application(tk.Frame):
         if self.img_loaded == False:
             self.img_loaded = True
         else:
-            self.alerts_label['text'] = 'Minecraft is not linked!'
+            self.alerts_label['text']='Minecraft is not linked!'
 
 root = tk.Tk()
 app = Application(master=root)
