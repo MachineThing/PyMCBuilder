@@ -1,16 +1,20 @@
+# I'm the graphical version of clcore!
 from tkinter import filedialog, messagebox
 import mcpi.minecraft as minecraft
+import os, tempfile, json, time
 from PIL import Image, ImageTk
 import mcpi.block as block
 import tkinter.ttk as tk2
 import functions as pymc
 import tkinter as tk
-import os, tempfile
 
 class Application(tk.Frame):
     def __init__(self, master=None):
         self.mc_linked = False
         self.img_loaded = False
+        self.result_made = False
+        self.bytes = 0
+        self.maxbytes = 0
         super().__init__(master)
         self.master = master
         self.image = ""
@@ -26,6 +30,13 @@ class Application(tk.Frame):
             self.mc_linked = True
         except:
             pass
+
+        try:
+            json_file = open("blocks.json")
+            self.json_put = json.load(json_file)
+        except:
+            messagebox.showerror("PyMcBuilder", "blocks.json is not found!\nplease reinstall PyMcBuilder.")
+            sys.exit(1)
 
         self.create_widgets()
 
@@ -94,7 +105,9 @@ class Application(tk.Frame):
         load = Image.open(self.image)
         load.convert('RGB')
         load.thumbnail((200, 200), Image.ANTIALIAS)
+        self.imwid, self.imhei = load.size
         render = ImageTk.PhotoImage(load)
+        self.im = load.load()
         # Load image
         self.img_label['image']=render
         self.img_label.image = render
@@ -106,12 +119,33 @@ class Application(tk.Frame):
                 self.alerts_label['fg']='red'
                 self.alerts_label['text']='Minecraft is not linked!'
             else:
-                self.alerts_label['fg']='black'
-                self.alerts_label['text']='Ready!'
-                pymc.chat(self.mc, "Ready!")
+                if self.result_made == False:
+                    self.alerts_label['fg']='red'
+                    self.alerts_label['text']='No MC version image made!'
+                else:
+                    self.alerts_label['fg']='black'
+                    self.alerts_label['text']='Ready!'
+                    pymc.chat(self.mc, "Ready!")
+
+    def read_bytes(self):
+        max = self.progress["maximum"]
+        # simulate reading 500 bytes; update progress bar
+        self.bytes += 500
+        self.progress["value"] = self.bytes
+        if self.bytes < max:
+            # read more bytes after 100 ms
+            self.after(100, self.read_bytes)
 
     def generate_result(self):
-        pass
+        self.progress["maximum"] = self.imhei*self.imwid
+        self.bused = []
+        for hei in range(self.imhei):
+            for wid in range(self.imwid):
+                smal = pymc.comp_pixel((self.im[wid, hei][0], self.im[wid, hei][1], self.im[wid, hei][2]), self.json_put)
+                self.im[wid, hei] = smal[1]
+                self.bused.append(str(smal[2]))
+                self.progress["value"] += 1
+                self.read_bytes()
 
     def link_minecraft(self):
         try:
