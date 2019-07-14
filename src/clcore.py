@@ -10,26 +10,6 @@ import tkinter as tk
 
 # Functions
 
-def color_dist(c1, c2):
-    # Thx stack overflow
-    (r1,g1,b1) = c1
-    (r2,g2,b2) = c2
-    return math.sqrt((r1 - r2)**2 + (g1 - g2) ** 2 + (b1 - b2) **2)
-
-def comp_pixel(rgb, blist):
-    smallest_rgb = ()
-    smallest_num = 999
-    smallest_name = ""
-    for i in blist:
-        irgb = (list(i["Color"])[0], list(i["Color"])[1], list(i["Color"])[2])
-        col_num = color_dist(rgb, irgb)
-
-        if col_num < smallest_num:
-            smallest_num = col_num
-            smallest_rgb = irgb
-            smallest_name = i["Name"]
-    return([smallest_num, smallest_rgb, smallest_name])
-
 # Main code
 mc = minecraft.Minecraft.create()
 try:
@@ -59,7 +39,7 @@ im = rim.load()
 pbar = tqdm(total=imhei*imwid)
 for hei in range(imhei):
     for wid in range(imwid):
-        smal = comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]), json_put)
+        smal = pymc.comp_pixel((im[wid, hei][0], im[wid, hei][1], im[wid, hei][2]), json_put)
         im[wid, hei] = smal[1]
         used.append(str(smal[2]))
         pbar.update(1)
