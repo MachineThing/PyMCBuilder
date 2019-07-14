@@ -1,4 +1,13 @@
-src/meta/mc_blocks
+# cache
 __pycache__
+
+# meta
+src/meta/mc_blocks
+
+# pyinstaller
+build/
+dist/
+
+# result/test images
 src/test.JPG
 *.GIF
