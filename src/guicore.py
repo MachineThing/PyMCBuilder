@@ -1,11 +1,16 @@
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
+import mcpi.minecraft as minecraft
 from PIL import Image, ImageTk
+import mcpi.block as block
 import tkinter.ttk as tk2
+import functions as pymc
 import tkinter as tk
 import os, tempfile
 
 class Application(tk.Frame):
     def __init__(self, master=None):
+        self.mc_linked = False
+        self.img_loaded = False
         super().__init__(master)
         self.master = master
         self.image = ""
@@ -13,9 +18,15 @@ class Application(tk.Frame):
         master.geometry("325x293")
         master.iconbitmap(os.path.join(os.getcwd(), 'images\\Logo.ico'))
 
-        self.img_loaded = False
-
         self.pack()
+
+        try:
+            self.mc = minecraft.Minecraft.create()
+            pymc.chat(self.mc, "Minecraft is linked!")
+            self.mc_linked = True
+        except:
+            pass
+
         self.create_widgets()
 
     def create_widgets(self):
@@ -32,6 +43,9 @@ class Application(tk.Frame):
         self.get_result = tk.Button(self.b_frame, text="Make result", state="disabled", command=self.generate_result)
         self.link_mc = tk.Button(self.b_frame, text="Link Minecraft", state="active", command=self.link_minecraft)
         self.print_img = tk.Button(self.b_frame, text="Build image!", state="disabled", command=self.print_image)
+
+        if self.mc_linked == True:
+            self.link_mc['state']="disabled"
 
         self.alerts_label.pack(side="top")
         self.progress.pack(side="bottom")
@@ -88,14 +102,24 @@ class Application(tk.Frame):
         if self.img_loaded == False:
             self.img_loaded = True
         else:
-            self.alerts_label['text']='Minecraft is not linked!'
+            if self.mc_linked == False:
+                self.alerts_label['fg']='red'
+                self.alerts_label['text']='Minecraft is not linked!'
+            else:
+                self.alerts_label['fg']='black'
+                self.alerts_label['text']='Ready!'
+                pymc.chat(self.mc, "Ready!")
 
     def generate_result(self):
         pass
 
     def link_minecraft(self):
-        pass
-
+        try:
+            self.mc = minecraft.Minecraft.create()
+            pymc.chat(self.mc, "Minecraft is linked!")
+            self.mc_linked = True
+        except ConnectionRefusedError:
+            messagebox.showerror("PyMcBuilder", "Minecraft is not linked!\nDo you have the RaspberryJamMod and is Minecraft open?")
     def print_image(self):
         pass
 
