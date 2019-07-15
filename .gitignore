@@ -8,6 +8,7 @@ src/meta/mc_blocks
 build/
 dist/
 
-# result/test images
+# result/tests
 src/test.JPG
+*.exe
 *.GIF
